@@ -1,0 +1,104 @@
+[
+  {
+    "Profesión":"Médico\/a",
+    "Riesgo_Automatizacion_%":15,
+    "Tareas_Susceptibles":"Triage básico, análisis de imágenes, soporte diagnóstico",
+    "Habilidades_Futuras":"Empatía clínica, decisiones éticas, coordinación multidisciplinar"
+  },
+  {
+    "Profesión":"Enfermero\/a",
+    "Riesgo_Automatizacion_%":33,
+    "Tareas_Susceptibles":"Monitorización, registros, educación sanitaria básica",
+    "Habilidades_Futuras":"Cuidados complejos, comunicación con familia\/pacientes"
+  },
+  {
+    "Profesión":"Profesor\/a",
+    "Riesgo_Automatizacion_%":34,
+    "Tareas_Susceptibles":"Corrección automática, generación de ejercicios",
+    "Habilidades_Futuras":"Tutoría personalizada, motivación, adaptación pedagógica"
+  },
+  {
+    "Profesión":"Camarero\/a",
+    "Riesgo_Automatizacion_%":57,
+    "Tareas_Susceptibles":"Toma de pedidos, cobro, recomendaciones estándar",
+    "Habilidades_Futuras":"Hospitalidad, upselling, gestión de conflictos"
+  },
+  {
+    "Profesión":"Cocinero\/a",
+    "Riesgo_Automatizacion_%":39,
+    "Tareas_Susceptibles":"Mise en place, recetas repetitivas",
+    "Habilidades_Futuras":"Creatividad culinaria, emplatado, gestión de cocina"
+  },
+  {
+    "Profesión":"Atención al cliente",
+    "Riesgo_Automatizacion_%":64,
+    "Tareas_Susceptibles":"Recomendaciones básicas, inventario, devoluciones simples",
+    "Habilidades_Futuras":"Visual merchandising, experiencia de cliente, gestión de quejas"
+  },
+  {
+    "Profesión":"Ingeniero\/a",
+    "Riesgo_Automatizacion_%":37,
+    "Tareas_Susceptibles":"Generación de código base, pruebas unitarias",
+    "Habilidades_Futuras":"Arquitectura, diseño de sistemas, seguridad"
+  },
+  {
+    "Profesión":"Agricultor\/a",
+    "Riesgo_Automatizacion_%":56,
+    "Tareas_Susceptibles":"Cosecha mecánica, riego automático, control de plagas",
+    "Habilidades_Futuras":"Agricultura de precisión, gestión sostenible, uso de drones"
+  },
+  {
+    "Profesión":"Turismo",
+    "Riesgo_Automatizacion_%":49,
+    "Tareas_Susceptibles":"Atención en recepción, gestión de reservas, guías automatizadas",
+    "Habilidades_Futuras":"Diseño de experiencias, atención personalizada, marketing cultural"
+  },
+  {
+    "Profesión":"Periodista",
+    "Riesgo_Automatizacion_%":55,
+    "Tareas_Susceptibles":"Notas breves, resúmenes, transcripción",
+    "Habilidades_Futuras":"Investigación de campo, reportajes en profundidad"
+  },
+  {
+    "Profesión":"Diseñador\/a gráfico\/a",
+    "Riesgo_Automatizacion_%":48,
+    "Tareas_Susceptibles":"Variantes de logos, banners simples, maquetación",
+    "Habilidades_Futuras":"Dirección creativa, branding, narrativa visual"
+  },
+  {
+    "Profesión":"Abogado\/a",
+    "Riesgo_Automatizacion_%":24,
+    "Tareas_Susceptibles":"Búsqueda jurisprudencial, revisión de contratos estándar",
+    "Habilidades_Futuras":"Negociación, estrategia procesal, argumentación"
+  },
+  {
+    "Profesión":"Contable",
+    "Riesgo_Automatizacion_%":94,
+    "Tareas_Susceptibles":"Registro de asientos, conciliaciones, reportes básicos",
+    "Habilidades_Futuras":"Análisis financiero, control interno, auditoría"
+  },
+  {
+    "Profesión":"Operario\/a de fábrica",
+    "Riesgo_Automatizacion_%":83,
+    "Tareas_Susceptibles":"Montaje repetitivo, control visual básico",
+    "Habilidades_Futuras":"Mantenimiento de 1er nivel, resolución de incidencias"
+  },
+  {
+    "Profesión":"Técnico\/a de mantenimiento",
+    "Riesgo_Automatizacion_%":45,
+    "Tareas_Susceptibles":"Diagnóstico con sensores, checklists",
+    "Habilidades_Futuras":"Intervención compleja, mejora continua"
+  },
+  {
+    "Profesión":"Agente de viajes",
+    "Riesgo_Automatizacion_%":68,
+    "Tareas_Susceptibles":"Búsqueda de vuelos\/hoteles, itinerarios estándar",
+    "Habilidades_Futuras":"Diseño de experiencias, asesoría personalizada"
+  },
+  {
+    "Profesión":"Policía local",
+    "Riesgo_Automatizacion_%":22,
+    "Tareas_Susceptibles":"Reportes, análisis de patrones",
+    "Habilidades_Futuras":"Juicio en situaciones imprevisibles, mediación social"
+  }
+]

@@ -1,0 +1,113 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Me va a sustituir la IA?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>¿Me va a sustituir la IA?</h1>
+    <p>Escribe tu profesión o elige una de la lista. Obtén el riesgo de automatización, tareas susceptibles y habilidades para adaptarte.</p>
+  </header>
+
+  <main>
+    <section class="search">
+      <input id="search" type="text" placeholder="Ej. Contable, Profesor/a, Ingeniero/a de software…" aria-label="Buscar profesión">
+      <select id="select"></select>
+      <button id="btn">Analizar</button>
+    </section>
+
+    <section id="result" class="card hidden" aria-live="polite">
+      <h2 id="profesion">Profesión</h2>
+      <div class="meter">
+        <div id="bar" class="bar"><span id="percent">0%</span></div>
+      </div>
+      <p class="legend"><span class="low">Bajo</span><span class="mid">Medio</span><span class="high">Alto</span></p>
+
+      <div class="grid">
+        <div>
+          <h3>Tareas susceptibles</h3>
+          <ul id="tareas"></ul>
+        </div>
+        <div>
+          <h3>Habilidades para el futuro</h3>
+          <ul id="skills"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <details>
+        <summary>Metodología y fuentes</summary>
+        <p>Estimaciones inspiradas en informes de Oxford, McKinsey y WEF. El porcentaje es orientativo por ocupación y puede variar por país, sector y calidad de datos.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto educativo – TR Bachillerato · Autor: Tu nombre</p>
+  </footer>
+
+  <script>
+    let data = [];
+    async function load() {
+      const res = await fetch('data.json');
+      data = await res.json();
+      const sel = document.getElementById('select');
+      sel.innerHTML = '<option value="">Elige una profesión…</option>' + data.map(d=>`<option>${d["Profesión"]}</option>`).join('');
+    }
+    function toList(text) {
+      return text.split(',').map(t => t.trim());
+    }
+    function show(item) {
+      if(!item) return;
+      document.getElementById('result').classList.remove('hidden');
+      document.getElementById('profesion').textContent = item["Profesión"];
+      const pct = +item["Riesgo_Automatizacion_%"];
+      const bar = document.getElementById('bar');
+      const percent = document.getElementById('percent');
+      bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+      percent.textContent = pct + '%';
+      bar.dataset.level = pct < 35 ? 'low' : (pct < 70 ? 'mid' : 'high');
+
+      const tareas = document.getElementById('tareas');
+      tareas.innerHTML = toList(item["Tareas_Susceptibles"]).map(t=>`<li>${t}</li>`).join('');
+      const skills = document.getElementById('skills');
+      skills.innerHTML = toList(item["Habilidades_Futuras"]).map(s=>`<li>${s}</li>`).join('');
+    }
+    function findMatch(query) {
+      query = query.toLowerCase().trim();
+      if(!query) return null;
+      // exact match first
+      let exact = data.find(d => d["Profesión"].toLowerCase() === query);
+      if (exact) return exact;
+      // contains
+      let contains = data.find(d => d["Profesión"].toLowerCase().includes(query));
+      if (contains) return contains;
+      // simple similarity via word overlap
+      let best = null, score = 0;
+      for (const d of data) {
+        const wordsQ = new Set(query.split(/\s+/));
+        const wordsP = new Set(d["Profesión"].toLowerCase().split(/\s+/));
+        const inter = [...wordsQ].filter(w => wordsP.has(w)).length;
+        if (inter > score) { score = inter; best = d; }
+      }
+      return best;
+    }
+    window.addEventListener('DOMContentLoaded', load);
+    document.getElementById('btn').addEventListener('click', ()=>{
+      const q = document.getElementById('search').value;
+      const sel = document.getElementById('select').value;
+      const item = sel ? data.find(d => d["Profesión"] === sel) : findMatch(q);
+      show(item);
+    });
+    document.getElementById('select').addEventListener('change', (e)=>{
+      const item = data.find(d => d["Profesión"] === e.target.value);
+      show(item);
+    });
+  </script>
+</body>
+</html>
